@@ -1,3 +1,7 @@
+export 'package:miscelaneos/presentation/screens/pokemons/pokemon_screen.dart';
+
+export 'package:miscelaneos/presentation/screens/pokemons/pokemons_screen.dart';
+
 export 'package:miscelaneos/presentation/screens/sensors/magnetometer_screen.dart';
 
 export 'package:miscelaneos/presentation/screens/sensors/gyroscope_ball_screen.dart';
