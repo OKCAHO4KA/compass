@@ -28,7 +28,8 @@ class _PokemonView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(pokemon.name),
+        title: Text(pokemon.name,
+            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
         actions: [
           IconButton(
               onPressed: () {
@@ -40,7 +41,7 @@ class _PokemonView extends StatelessWidget {
       ),
       body: Center(
         child: Image.network(pokemon.spriteFront,
-            fit: BoxFit.contain, width: 150, height: 150),
+            fit: BoxFit.contain, width: 240, height: 240),
       ),
     );
   }

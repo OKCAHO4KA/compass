@@ -48,7 +48,7 @@ class MovingBall extends StatelessWidget {
             left: (currentYPos - 25) + screenWidth / 2,
             curve: Curves.easeInOut,
             duration: const Duration(milliseconds: 1000),
-            child: Ball(
+            child: const Ball(
               colorBall: Colors.orange,
               radius: 50,
             )),
@@ -57,7 +57,7 @@ class MovingBall extends StatelessWidget {
             left: (currentYPos - 25) + screenWidth / 2,
             curve: Curves.easeInOut,
             duration: const Duration(milliseconds: 1000),
-            child: Ball(colorBall: Colors.blue, radius: 80)),
+            child: const Ball(colorBall: Colors.blue, radius: 80)),
       ],
     );
   }

@@ -1,44 +1,44 @@
 class PokemonResponse {
-  final List<Ability> abilities;
-  final int baseExperience;
-  final List<Species> forms;
-  final List<GameIndex> gameIndices;
-  final int height;
-  final List<HeldItem> heldItems;
+  final List<Ability>? abilities;
+  final int? baseExperience;
+  final List<Species>? forms;
+  final List<GameIndex>? gameIndices;
+  final int? height;
+  final List<HeldItem>? heldItems;
   final int id;
-  final bool isDefault;
-  final String locationAreaEncounters;
-  final List<Move> moves;
+  final bool? isDefault;
+  final String? locationAreaEncounters;
+  final List<Move>? moves;
   final String name;
-  final int order;
-  final List<dynamic> pastAbilities;
-  final List<dynamic> pastTypes;
-  final Species species;
+  final int? order;
+  final List<dynamic>? pastAbilities;
+  final List<dynamic>? pastTypes;
+  final Species? species;
   final Sprites sprites;
-  final List<Stat> stats;
-  final List<Type> types;
-  final int weight;
+  final List<Stat>? stats;
+  final List<Type>? types;
+  final int? weight;
 
   PokemonResponse({
-    required this.abilities,
-    required this.baseExperience,
-    required this.forms,
-    required this.gameIndices,
-    required this.height,
-    required this.heldItems,
+    this.abilities,
+    this.baseExperience,
+    this.forms,
+    this.gameIndices,
+    this.height,
+    this.heldItems,
     required this.id,
-    required this.isDefault,
-    required this.locationAreaEncounters,
-    required this.moves,
+    this.isDefault,
+    this.locationAreaEncounters,
+    this.moves,
     required this.name,
-    required this.order,
-    required this.pastAbilities,
-    required this.pastTypes,
-    required this.species,
+    this.order,
+    this.pastAbilities,
+    this.pastTypes,
+    this.species,
     required this.sprites,
-    required this.stats,
-    required this.types,
-    required this.weight,
+    this.stats,
+    this.types,
+    this.weight,
   });
 
   factory PokemonResponse.fromJson(Map<String, dynamic> json) =>
@@ -69,24 +69,24 @@ class PokemonResponse {
       );
 
   Map<String, dynamic> toJson() => {
-        "abilities": List<dynamic>.from(abilities.map((x) => x.toJson())),
+        "abilities": List<dynamic>.from(abilities!.map((x) => x.toJson())),
         "base_experience": baseExperience,
-        "forms": List<dynamic>.from(forms.map((x) => x.toJson())),
-        "game_indices": List<dynamic>.from(gameIndices.map((x) => x.toJson())),
+        "forms": List<dynamic>.from(forms!.map((x) => x.toJson())),
+        "game_indices": List<dynamic>.from(gameIndices!.map((x) => x.toJson())),
         "height": height,
-        "held_items": List<dynamic>.from(heldItems.map((x) => x.toJson())),
+        "held_items": List<dynamic>.from(heldItems!.map((x) => x.toJson())),
         "id": id,
         "is_default": isDefault,
         "location_area_encounters": locationAreaEncounters,
-        "moves": List<dynamic>.from(moves.map((x) => x.toJson())),
+        "moves": List<dynamic>.from(moves!.map((x) => x.toJson())),
         "name": name,
         "order": order,
-        "past_abilities": List<dynamic>.from(pastAbilities.map((x) => x)),
-        "past_types": List<dynamic>.from(pastTypes.map((x) => x)),
-        "species": species.toJson(),
+        "past_abilities": List<dynamic>.from(pastAbilities!.map((x) => x)),
+        "past_types": List<dynamic>.from(pastTypes!.map((x) => x)),
+        "species": species!.toJson(),
         "sprites": sprites.toJson(),
-        "stats": List<dynamic>.from(stats.map((x) => x.toJson())),
-        "types": List<dynamic>.from(types.map((x) => x.toJson())),
+        "stats": List<dynamic>.from(stats!.map((x) => x.toJson())),
+        "types": List<dynamic>.from(types!.map((x) => x.toJson())),
         "weight": weight,
       };
 }
@@ -332,27 +332,27 @@ class Versions {
 }
 
 class Sprites {
-  final String backDefault;
-  final String backFemale;
-  final String backShiny;
-  final String backShinyFemale;
+  final String? backDefault;
+  final String? backFemale;
+  final String? backShiny;
+  final String? backShinyFemale;
   final String frontDefault;
-  final String frontFemale;
-  final String frontShiny;
-  final String frontShinyFemale;
+  final String? frontFemale;
+  final String? frontShiny;
+  final String? frontShinyFemale;
   final Other? other;
   final Versions? versions;
   final Sprites? animated;
 
   Sprites({
-    required this.backDefault,
-    required this.backFemale,
-    required this.backShiny,
-    required this.backShinyFemale,
+    this.backDefault,
+    this.backFemale,
+    this.backShiny,
+    this.backShinyFemale,
     required this.frontDefault,
-    required this.frontFemale,
-    required this.frontShiny,
-    required this.frontShinyFemale,
+    this.frontFemale,
+    this.frontShiny,
+    this.frontShinyFemale,
     this.other,
     this.versions,
     this.animated,
@@ -593,16 +593,16 @@ class OfficialArtwork {
 }
 
 class Home {
-  final String frontDefault;
-  final String frontFemale;
-  final String frontShiny;
-  final String frontShinyFemale;
+  final String? frontDefault;
+  final String? frontFemale;
+  final String? frontShiny;
+  final String? frontShinyFemale;
 
   Home({
-    required this.frontDefault,
-    required this.frontFemale,
-    required this.frontShiny,
-    required this.frontShinyFemale,
+    this.frontDefault,
+    this.frontFemale,
+    this.frontShiny,
+    this.frontShinyFemale,
   });
 
   factory Home.fromJson(Map<String, dynamic> json) => Home(
@@ -677,9 +677,9 @@ class GenerationViii {
 }
 
 class Other {
-  final DreamWorld dreamWorld;
-  final Home home;
-  final OfficialArtwork officialArtwork;
+  final DreamWorld? dreamWorld;
+  final Home? home;
+  final OfficialArtwork? officialArtwork;
 
   Other({
     required this.dreamWorld,
@@ -694,9 +694,9 @@ class Other {
       );
 
   Map<String, dynamic> toJson() => {
-        "dream_world": dreamWorld.toJson(),
-        "home": home.toJson(),
-        "official-artwork": officialArtwork.toJson(),
+        "dream_world": dreamWorld!.toJson(),
+        "home": home!.toJson(),
+        "official-artwork": officialArtwork!.toJson(),
       };
 }
 

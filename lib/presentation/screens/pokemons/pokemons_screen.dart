@@ -78,7 +78,7 @@ class _PokemonGrid extends ConsumerWidget {
               "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png",
               fit: BoxFit.contain,
             ),
-            onTap: () => context.push('/pokemons/${index + 1}'));
+            onTap: () => context.push('/pokemons/${(index + 1).toString()}'));
       },
       itemCount: pokemonId.length,
     );
