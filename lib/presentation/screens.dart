@@ -1,3 +1,5 @@
+export 'package:miscelaneos/presentation/screens/biometrics/biometric_screen.dart';
+
 export 'package:miscelaneos/presentation/screens/pokemons/pokemon_screen.dart';
 
 export 'package:miscelaneos/presentation/screens/pokemons/pokemons_screen.dart';

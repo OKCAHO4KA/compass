@@ -16,6 +16,7 @@ final menuItems = <MenuItem>[
   MenuItem('Giróscopio Ball ', Icons.sports_baseball_sharp, '/gyroscopio-ball'),
   MenuItem('Brújula', Icons.explore, '/brujula'),
   MenuItem('Pokemon', Icons.catching_pokemon_rounded, '/pokemons'),
+  MenuItem('Biometrics', Icons.fingerprint, '/biometric'),
 ];
 
 class MainMenu extends StatelessWidget {
