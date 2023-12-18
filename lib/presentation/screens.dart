@@ -1,3 +1,9 @@
+export 'package:miscelaneos/presentation/screens/location/map_screen.dart';
+
+export 'package:miscelaneos/presentation/screens/location/location_screen.dart';
+
+export 'package:miscelaneos/presentation/screens/location/controlled_map_screen.dart';
+
 export 'package:miscelaneos/presentation/screens/biometrics/biometric_screen.dart';
 
 export 'package:miscelaneos/presentation/screens/pokemons/pokemon_screen.dart';
