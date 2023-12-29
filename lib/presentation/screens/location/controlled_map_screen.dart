@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:miscelaneos/presentation/providers/location/watch_location_provider.dart';
+import 'package:miscelaneos/presentation/providers/providers.dart';
 
 class ControlledMapScreen extends ConsumerWidget {
   const ControlledMapScreen({super.key});
@@ -19,7 +19,7 @@ class ControlledMapScreen extends ConsumerWidget {
   }
 }
 
-class MapAndControls extends StatelessWidget {
+class MapAndControls extends ConsumerWidget {
   final double latitude;
   final double longitude;
 
@@ -27,7 +27,8 @@ class MapAndControls extends StatelessWidget {
       {super.key, required this.latitude, required this.longitude});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final mapControllerState = ref.watch(mapControllerProvider);
     return Stack(
       children: [
         _MapView(initialLat: latitude, initialLng: longitude),
@@ -47,7 +48,9 @@ class MapAndControls extends StatelessWidget {
             left: 20,
             child: IconButton.filledTonal(
                 onPressed: () {
-                  context.pop();
+                  ref
+                      .read(mapControllerProvider.notifier)
+                      .goToLocation(latitude, longitude);
                 },
                 icon: const Icon(Icons.location_searching))),
 
@@ -57,9 +60,11 @@ class MapAndControls extends StatelessWidget {
             left: 20,
             child: IconButton.filledTonal(
                 onPressed: () {
-                  context.pop();
+                  ref.read(mapControllerProvider.notifier).toggleFolowUser();
                 },
-                icon: const Icon(Icons.accessibility_new_outlined))),
+                icon: Icon(mapControllerState.followUser
+                    ? Icons.directions_run
+                    : Icons.accessibility_new_outlined))),
 
         // icon: const Icon(Icons.directions_run))),
         //crear marcador
@@ -68,7 +73,10 @@ class MapAndControls extends StatelessWidget {
             left: 20,
             child: IconButton.filledTonal(
                 onPressed: () {
-                  context.pop();
+                  ref
+                      .read(mapControllerProvider.notifier)
+                      // .addMarker(lat, lng, name: 'Por aqui pasó el usuario');
+                      .addMarkerCurrentPosition();
                 },
                 icon: const Icon(Icons.pin_drop))),
       ],
@@ -76,20 +84,27 @@ class MapAndControls extends StatelessWidget {
   }
 }
 
-class _MapView extends StatefulWidget {
+class _MapView extends ConsumerStatefulWidget {
   final double initialLat;
   final double initialLng;
 
   const _MapView({required this.initialLat, required this.initialLng});
 
   @override
-  State<_MapView> createState() => __MapViewState();
+  ConsumerState<_MapView> createState() => __MapViewState();
 }
 
-class __MapViewState extends State<_MapView> {
+class __MapViewState extends ConsumerState<_MapView> {
   @override
   Widget build(BuildContext context) {
+    final mapController = ref.watch(mapControllerProvider);
     return GoogleMap(
+      onLongPress: (argument) {
+        ref
+            .read(mapControllerProvider.notifier)
+            .addMarker(argument.latitude, argument.longitude);
+      },
+      markers: mapController.markersSet,
       myLocationButtonEnabled: false,
       myLocationEnabled: true,
       zoomControlsEnabled: false,
@@ -100,6 +115,7 @@ class __MapViewState extends State<_MapView> {
       ),
       onMapCreated: (GoogleMapController controller) {
         // _controller.complete(controller);
+        ref.read(mapControllerProvider.notifier).setMapController(controller);
       },
     );
   }

@@ -11,6 +11,7 @@ dependencies:
   dio: ^5.4.0
   flutter:
     sdk: flutter
+  flutter_app_badger: ^1.5.0
   flutter_compass: ^0.8.0
   flutter_riverpod: ^2.4.9
   geolocator: ^10.1.0
@@ -19,6 +20,7 @@ dependencies:
   google_maps_flutter: ^2.5.0
   local_auth: ^2.1.7
   permission_handler: ^11.0.1
+  quick_actions: ^1.0.6
   sensors_plus: ^4.0.1
   share_plus: ^7.0.0
 

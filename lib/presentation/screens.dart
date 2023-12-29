@@ -1,3 +1,7 @@
+export 'package:miscelaneos/presentation/screens/ads/ad_full_screen.dart';
+
+export 'package:miscelaneos/presentation/screens/badge/badge_screen.dart';
+
 export 'package:miscelaneos/presentation/screens/location/map_screen.dart';
 
 export 'package:miscelaneos/presentation/screens/location/location_screen.dart';
@@ -25,3 +29,5 @@ export 'package:miscelaneos/presentation/screens/permissions/permissions_screen.
 export 'package:miscelaneos/presentation/screens/home/home_screen.dart';
 
 export './screens/permissions/ask_location_screen.dart';
+
+export './screens/ads/ad_rewarded_screen.dart';

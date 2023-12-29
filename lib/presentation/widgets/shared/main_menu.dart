@@ -20,6 +20,9 @@ final menuItems = <MenuItem>[
   MenuItem('Ubicación', Icons.pin_drop, '/location'),
   MenuItem('Mapas', Icons.map_sharp, '/maps'),
   MenuItem('Controlado', Icons.gamepad_outlined, '/controlled-map'),
+  MenuItem('Badge', Icons.notification_important, '/badge'),
+  MenuItem('Ad Full', Icons.ad_units_rounded, '/ad-full'),
+  MenuItem('Ad Reward', Icons.fort_rounded, '/ad-rewarded'),
 ];
 
 class MainMenu extends StatelessWidget {
@@ -72,6 +75,7 @@ class HomeMenuItem extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             Text(title,
+                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.white))
           ],
