@@ -23,6 +23,7 @@ final menuItems = <MenuItem>[
   MenuItem('Badge', Icons.notification_important, '/badge'),
   MenuItem('Ad Full', Icons.ad_units_rounded, '/ad-full'),
   MenuItem('Ad Reward', Icons.fort_rounded, '/ad-rewarded'),
+  MenuItem('Background Process', Icons.storage_rounded, '/db-pokemons'),
 ];
 
 class MainMenu extends StatelessWidget {

@@ -31,3 +31,5 @@ export 'package:miscelaneos/presentation/screens/home/home_screen.dart';
 export './screens/permissions/ask_location_screen.dart';
 
 export './screens/ads/ad_rewarded_screen.dart';
+
+export './screens/pokemons/db_pokemons_screen.dart';
